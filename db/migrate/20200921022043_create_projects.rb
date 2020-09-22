@@ -11,7 +11,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :location
       t.string :completion
       t.integer :cost
-      
+
       t.timestamps null: false
     end
   end

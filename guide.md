@@ -1,14 +1,3 @@
-Build my models
-    -migrations
-    -model classes
-    -associations
-
-Test my models and associations in the console
-    -create some seed data
-    -adjust migrations as needed
-
---------------------------------------------------------------
-
 Start with my ApplicationController helpers - '#logged_in?' and '@current_user' 
     -Add my login/signup/signout routes
 
