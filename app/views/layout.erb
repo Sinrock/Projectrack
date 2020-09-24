@@ -14,18 +14,15 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-
     
     <div class="wrapper">
 
     <div class="nav">
       <% if logged_in? %>
-      <a href="/">All Projects</a>
+      <a href="/projects">All Projects</a>
       <a href="/">Create a Project</a>
       <a href="/logout">Log Out</a>
-
       <% end %>
-
     </div>
 
         <%= yield %>
