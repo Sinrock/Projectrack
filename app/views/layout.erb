@@ -17,12 +17,20 @@
     
     <div class="wrapper">
 
+    <% if flash[:error] %>
+    <h2 style="color:red"><%= flash[:error] %></h2>
+    <% end %>
+
+    <% if flash[:message] %>
+    <h2 style="color:green"><%= flash[:message] %></h2>
+    <% end %>
+
     <div class="nav">
       <% if logged_in? %>
-      <a href="/">Home</a>
-      <a href="/projects">All Projects</a>
-      <a href="/projects/new">Create a Project</a>
-      <a href="/logout">Log Out</a>
+      <a href="/" style="font-size:125%;">&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</a>
+      <a href="/projects" style="font-size:125%;">&nbsp;&nbsp;All Projects&nbsp;&nbsp;&nbsp;</a>
+      <a href="/projects/new" style="font-size:125%;">&nbsp;&nbsp;Create a New Project&nbsp;&nbsp;&nbsp;</a>
+      <a href="/logout" style="font-size:125%;">&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;</a>
       <% end %>
     </div>
 
