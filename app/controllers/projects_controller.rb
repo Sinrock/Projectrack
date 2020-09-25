@@ -30,10 +30,30 @@ get '/projects/:id' do
     erb :"/projects/show"
 end
 
-#update
-    #edit button that takes us to the form
-    #render an edit form
-    #patch method/route that will update the projects
+get '/projects/:id/edit' do
+    @project = Project.find(params[:id])
+    erb :'/projects/edit'
+end
 
-#delete
+patch '/projects/:id' do
+    @project = Project.find(params[:id])
+    @project.update(
+        title: params[:title],
+        description: params[:description],
+        difficulty: params[:difficulty],
+        duration: params[:duration],
+        tools: params[:tools],
+        parts: params[:parts],
+        location: params[:location],
+        completion: params[:completion],
+        cost: params[:cost]
+    )
+    redirect "/projects/#{@project.id}"
+end
+
+delete '/projects/:id' do
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect '/projects'
+end
 end

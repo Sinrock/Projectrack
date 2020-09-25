@@ -1,0 +1,34 @@
+<h1>Edit Project</h1>
+
+<form class="" action="/projects/<%= @project.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+
+    <label for="title"><strong>Title: </strong></label>
+    <input type="string" name="title" value="<%= @project.title %>">
+<br>
+    <label for="Description"><strong>Description: </strong></label>
+    <input type="text" name="description" value="<%= @project.duration %>">
+<br>
+    <label for="difficulty"><strong>Difficulty: </strong></label>
+    <input type="integer" name="difficulty" value="<%= @project.difficulty %>">
+<br>
+    <label for="duration"><strong>Est. Duration: </strong></label>
+    <input type="integer" name="duration" value="<%= @project.duration %>">
+<br>
+    <label for="tools"><strong>Tools Needed: </strong></label>
+    <input type="string" name="tools" value="<%= @project.tools %>">
+<br>
+    <label for="parts"><strong>Parts Needed: </strong></label>
+    <input type="string" name="parts" value="<%= @project.parts %>">
+<br>
+    <label for="location"><strong>Location: </strong></label>
+    <input type="string" name="location" value="<%= @project.location %>">
+<br>
+    <label for="completion"><strong>Complete By: </strong></label>
+    <input type="date" name="completion" value="<%= @project.completion %>">
+<br>
+    <label for="cost"><strong>Est. Cost: </strong></label>
+    <input type="integer" name="cost" value="<%= @project.cost %>">
+<br>
+    <input type="submit" name="" value="Save Changes">
+</form>
