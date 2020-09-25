@@ -1,4 +1,11 @@
-<h3><%= @project.title %></h3>
-    <strong>Created At: <%= @project.created_at %></strong>
-    <p><%= @project.description %></p>
-    <p>By: <%= @project.user.name  %></p>
+<h1><%= @project.title %></h1>
+<p><strong>Description:</strong> <%= @project.description %></p>
+<p><strong>Difficulty Level:</strong> <%= @project.difficulty %></p>
+<p><strong>Estimated Duration:</strong> <%= @project.duration %></p>
+<p><strong>Tools Needed:</strong> <%= @project.tools %></p>
+<p><strong>Parts Needed:</strong> <%= @project.parts %></p>
+<p><strong>Location of Project:</strong> <%= @project.location %></p>
+<p><strong>Complete By Date:</strong> <%= @project.completion %></p>
+<p><strong>Estimated Cost:</strong> <%= @project.cost %></p>
+<p><strong>Created By:</strong> <%= @project.user.name  %></p>
+<p><strong>Created At:</strong> <%= @project.created_at %></p>

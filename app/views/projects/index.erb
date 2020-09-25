@@ -2,7 +2,8 @@
 
 <% @projects.each do |project| %>
     <h4><a href="/projects/<%= project.id %>"><%= project.title %></a></h4>
-    <strong>Created At: <%= project.created_at %></strong>
+    <p><strong>Created At: <%= project.created_at %></strong></p>
     <p><%= project.description %></p>
+    <p><%= project.cost %></p>
     <p><%= project.user.name  %></p>
 <% end %>
