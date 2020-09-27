@@ -33,4 +33,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-This gem is available as open source under the terms of the [MIT](https://choosealicense.com/licenses/mit/) license.
+This gem is available under the terms of the [MIT](https://choosealicense.com/licenses/mit/) license.
