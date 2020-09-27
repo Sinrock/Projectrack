@@ -10,6 +10,9 @@
 <p><strong>Created At:</strong> <%= @project.created_at %></p>
 <p><strong>Created By:</strong> <%= @project.user.name  %></p>
 
+<% if can_edit(@project) %>
+
+
 <a href="/projects/<%= @project.id %>/edit">Edit This Project</a>
 
 
@@ -18,3 +21,4 @@
     <input type="hidden" name="_method" value="delete">
     <input type="submit" name="" value="Delete This Project">
 </form></p>
+<% end %>

@@ -8,7 +8,12 @@ class ProjectsController < ApplicationController
   end
 
   get '/projects/new' do
-    erb :"projects/new"
+    if logged_in
+    erb :'projects/new'
+    else
+      flash[:error] = 'Please log in or sign up before creating a post!'
+      redirect '/'
+    end
   end
 
   post '/projects' do
@@ -35,12 +40,17 @@ class ProjectsController < ApplicationController
 
   get '/projects/:id' do
     @project = Project.find(params[:id])
-    erb :"/projects/show"
+    erb :'/projects/show'
   end
 
   get '/projects/:id/edit' do
     @project = Project.find(params[:id])
-    erb :'/projects/edit'
+    if can_edit(@project)
+      erb :'/projects/edit'
+    else
+      flash[:error] = 'Sorry, you are not authorized to edit this post!'
+      redirect '/projects'
+    end
   end
 
   patch '/projects/:id' do
@@ -64,4 +74,5 @@ class ProjectsController < ApplicationController
     @project.destroy
     redirect '/projects'
   end
+
 end
