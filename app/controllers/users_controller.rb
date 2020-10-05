@@ -2,8 +2,13 @@
 
 class UsersController < ApplicationController
   get '/login' do
+  if logged_in
+    flash[:message] = "You're already logged in silly goose!"
+    redirect 'users/show'
+  else
     erb :'users/login'
   end
+end
 
   post '/login' do
     user = User.find_by(email: params[:email])
