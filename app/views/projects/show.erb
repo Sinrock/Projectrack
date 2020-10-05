@@ -12,13 +12,13 @@
 
 <% if can_edit(@project) %>
 
-
 <a href="/projects/<%= @project.id %>/edit">Edit This Project</a>
-
-
 <p>
 <form class="" action="/projects/<%= @project.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" name="" value="Delete This Project">
 </form></p>
+<hr style="border: 3px solid black;" />
+<br>
+<p><strong><a href="/projects">Go to all my projects</a></strong></p>
 <% end %>
