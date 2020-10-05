@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
 
   get '/projects/new' do
     if logged_in
-    erb :'projects/new'
+      erb :'projects/new'
     else
       flash[:error] = 'Please log in or sign up before creating a post!'
       redirect '/'
