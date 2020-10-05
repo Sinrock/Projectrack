@@ -14,32 +14,85 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: grey;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+}
+.wrapper {
+    background: #C0C0C0;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+  }
+</style>
+
+<div class="sidenav">
+  <a href="/">Home</a>
+  <a href="/login">Log In</a>
+  <a href="/signup">Create An Account</a>
+  <hr></hr>
+  <% if logged_in %>
+  <a href="/projects">View Projects</a>
+  <a href="/projects/new">Create A Project</a>
+  <a href="/logout">Log Out</a>
+  <% end %>
+</div>
     
-    <div class="wrapper">
+<div class="wrapper">
 
-    <% if flash[:error] %>
-    <h2 style="color:red"><%= flash[:error] %></h2>
-    <% end %>
+<% if flash[:error] %>
+  <h2 style="color:red"><%= flash[:error] %></h2>
+<% end %>
 
-    <% if flash[:message] %>
-    <h2 style="color:green"><%= flash[:message] %></h2>
-    <% end %>
+<% if flash[:message] %>
+  <h2 style="color:green"><%= flash[:message] %></h2>
+<% end %>
 
-    <div class="nav">
-      <% if logged_in %>
-      <a href="/" style="font-size:125%;">&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</a>
-      <a href="/projects" style="font-size:125%;">&nbsp;&nbsp;All Projects&nbsp;&nbsp;&nbsp;</a>
-      <a href="/projects/new" style="font-size:125%;">&nbsp;&nbsp;Create a New Project&nbsp;&nbsp;&nbsp;</a>
-      <a href="/logout" style="font-size:125%;">&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;</a>
-      <% end %>
-    </div>
+<%= yield %>
 
-        <%= yield %>
-
-      <footer class="branding">
-        <small>&copy; 2020 <strong>ProjecTrack</strong></small>
-      </footer>
-    </div>
+  <footer class="branding">
+    <small>&copy; 2020 <strong>ProjecTrack</strong></small>
+  </footer>
+</div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>

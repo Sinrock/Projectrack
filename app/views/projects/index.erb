@@ -1,9 +1,10 @@
-<h1>All Projects</h1>
-
+<h1>My Projects</h1>
+<h3>Click on a project to see more details or to edit/delete one</h3>
 <% @projects.each do |project| %>
-    <h4><a href="/projects/<%= project.id %>"><%= project.title %></a></h4>
+    <hr>
+    <h2><a href="/projects/<%= project.id %>"><%= project.title %></a></h2>
+    <p><strong>Description: </strong><<%= project.description %></p>
+    <p><strong>Complete By:</strong><%= project.completion %></p>
+    <p><strong>Cost:</strong><%= project.cost %></p>
     <p><strong>Created At: <%= project.created_at %></strong></p>
-    <p><%= project.description %></p>
-    <p><%= project.cost %></p>
-    <p><%= project.user.name  %></p>
 <% end %>
