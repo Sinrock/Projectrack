@@ -4,8 +4,6 @@ ProjecTrack is an application to create, edit, view and delete various projects 
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
 ```bash
 gem 'ProjecTrack'
 ```
