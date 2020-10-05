@@ -3,7 +3,7 @@
 <% @projects.each do |project| %>
     <hr style="border: 3px solid black;" />
     <h2><a href="/projects/<%= project.id %>"><%= project.title %></a></h2>
-    <p><strong>Description: </strong><<%= project.description %></p>
+    <p><strong>Description:</strong> <%= project.description %></p>
     <p><strong>Complete By:</strong><%= project.completion %></p>
     <p><strong>Cost:</strong><%= project.cost %></p>
 <% end %>

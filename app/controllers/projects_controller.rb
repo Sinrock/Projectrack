@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 class ProjectsController < ApplicationController
-  #need to add in ability to only see projects one user created
+  # need to add in ability to only see projects one user created
   get '/projects' do
     if logged_in
       @projects = current_user.projects
       erb :'projects/index'
-    else 
+    else
       flash[:error] = 'You must be signed in to view your projects!'
       redirect '/login'
     end
-end
+  end
 
   get '/projects/new' do
     if logged_in
