@@ -31,6 +31,5 @@ class ApplicationController < Sinatra::Base
     def can_edit(project)
       project.user == current_user
     end
-
   end
 end

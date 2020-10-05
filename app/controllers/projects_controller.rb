@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Controls the creation of projects and allows them to be created, read, updated and deleted. (CRUD)
 class ProjectsController < ApplicationController
   get '/projects' do
     @projects = Project.all
@@ -74,5 +73,4 @@ class ProjectsController < ApplicationController
     @project.destroy
     redirect '/projects'
   end
-
 end

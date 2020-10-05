@@ -1,16 +1,13 @@
 # frozen_string_literal: true
 
-# Controls the user's flow from login to logout
 class UsersController < ApplicationController
-  # shows the login form page
   get '/login' do
     erb :'users/login'
   end
 
-  # takes in the params from the login form
   post '/login' do
     user = User.find_by(email: params[:email])
-    if user&.authenticate(params[:password])
+    if user &.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:message] = "Welcome back #{user.name}"
       redirect "/users/#{user.id}"
@@ -30,9 +27,14 @@ class UsersController < ApplicationController
   end
 
   post '/users' do
-    @user = User.create(params)
-    session[:user_id] = @user.id
-    redirect "users/#{@user.id}"
+    @user = User.new(params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect "users/#{@user.id}"
+    else
+      flash[:error] = "Are you sure you don't have an account? A user with that email address already exists!"
+      redirect '/login'
+    end
   end
 
   get '/logout' do
