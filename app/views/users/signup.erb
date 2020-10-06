@@ -1,15 +1,115 @@
-<h1>Create An Account</h1>
-<br>
-<br>
-<form class="" action="/users" method="post">
-<label for="name">Name: </label>
-<input type="text" name="name" value="">
-<label for="email">Email Address: </label>
-<input type="text" name="email" value="">
-<label for="password">Password: </label>
-<input type="password" name="password" value="">
-<input type="submit" name="" value="Create">
-</form>
-<br>
-<br>
-<a href="/">Cancel and return home</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create A Free Account</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: black;
+      }
+      h1 {
+      margin: 0;
+      font-weight: 400;
+      text-align: center;
+      }
+      h3 {
+      margin: 12px 0;
+      color: black;
+      }
+      .main-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      }
+      fieldset {
+      border: none;
+      border-top: 1px solid #black;
+      }
+      .account-details, .personal-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .account-details >div, .personal-details >div >div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      }
+      .account-details >div, .personal-details >div, input, label {
+      width: 100%;
+      }
+      label {
+      padding: 0 5px;
+      text-align: right;
+      vertical-align: middle;
+      }
+      input {
+      padding: 5px;
+      vertical-align: middle;
+      }
+      button {
+      width: 100%;
+      padding: 10px 0;
+      margin: 10px auto;
+      border-radius: 5px; 
+      border: none;
+      background: black; 
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      }
+      button:hover {
+      background: grey;
+      }
+      @media (min-width: 568px) {
+      .account-details >div, .personal-details >div {
+      width: 50%;
+      }
+      label {
+      width: 40%;
+      }
+      input {
+      width: 60%;
+      }
+      select, .children, .gender, .bdate-block {
+      width: calc(60% + 16px);
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+    <form class="" action="/users" method="post">
+      <h1><strong>Create A Free Account</strong></h1>
+      <fieldset>
+        <legend>
+          <h3>Please enter your new account information below</h3>
+        </legend>
+        <div  class="account-details">
+          <div><label><strong>Name*</strong></label><input type="text" name="name" required></div>
+          <div><label><strong>Email Address*</strong></label><input type="text" name="email" required></div>
+          <div><label><strong>Password*</strong></label><input type="password" name="password" required></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+      </fieldset>
+      <button type="submit" value="Create">Submit</button>
+    </form>
+    </div> 
+  </body>
+</html>

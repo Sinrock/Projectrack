@@ -54,7 +54,7 @@ body {
   padding-left: 20px;
 }
 .wrapper {
-    background: #C0C0C0;
+    background: C0C0C0;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -62,6 +62,9 @@ body {
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+    vertical-align: middle;
+    horizontal-align: middle;
+    opacity:0.75;
   }
 </style>
 
@@ -69,12 +72,14 @@ body {
   <a href="/">Home</a>
   <a href="/login">Log In</a>
   <a href="/signup">Create An Account</a>
+  
   <hr></hr>
   <% if logged_in %>
   <a href="/projects">View Projects</a>
   <a href="/projects/new">Create A Project</a>
   <a href="/logout">Log Out</a>
   <% end %>
+  <img src="https://kaahur.com/wp-content/uploads/2020/10/pexels-photo-209235.jpeg" width="200" height="120" style="vertical-align:bottom">
 </div>
     
 <div class="wrapper">
