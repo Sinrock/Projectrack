@@ -8,7 +8,6 @@
 <p><strong>Complete By Date:</strong> <%= @project.completion %></p>
 <p><strong>Estimated Cost:</strong> <%= @project.cost %></p>
 <p><strong>Created At:</strong> <%= @project.created_at %></p>
-<p><strong>Created By:</strong> <%= @project.user.name  %></p>
 
 <% if can_edit(@project) %>
 
@@ -20,5 +19,5 @@
 </form></p>
 <hr style="border: 3px solid black;" />
 <br>
-<p><strong><a href="/projects">Go to all my projects</a></strong></p>
+<p><strong><a href="/projects">Back To All My Projects</a></strong></p>
 <% end %>

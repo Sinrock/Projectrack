@@ -28,7 +28,12 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    erb :'/users/signup'
+    if logged_in
+      flash[:message] = "You already have an account silly goose!"
+      redirect '/'
+    else
+      erb :'/users/signup'
+    end
   end
 
   post '/users' do
