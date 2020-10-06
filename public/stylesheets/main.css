@@ -55,7 +55,9 @@
   p {
     margin-bottom: 18px;
   }
-
+  img {
+    border-radius:10px;
+  }
   .main {
     overflow: hidden;
   }
