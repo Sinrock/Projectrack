@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
+# Projects
 class ProjectsController < ApplicationController
-  # need to add in ability to only see projects one user created
   get '/projects' do
     if logged_in
       @projects = current_user.projects

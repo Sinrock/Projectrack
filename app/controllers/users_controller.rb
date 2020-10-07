@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Users
 class UsersController < ApplicationController
   get '/login' do
     if logged_in
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
 
   get '/signup' do
     if logged_in
-      flash[:message] = "You already have an account silly goose!"
+      flash[:message] = 'You already have an account silly goose!'
       redirect '/'
     else
       erb :'/users/signup'
@@ -43,14 +44,14 @@ class UsersController < ApplicationController
       flash[:message] = "Account Creation Successful!  Welcome, #{@user.name}"
       redirect "users/#{@user.id}"
     else
-      flash[:error] = "A user with that email address already exists, please log in!"
+      flash[:error] = 'A user with that email address already exists, please log in!'
       redirect '/login'
     end
   end
 
   get '/logout' do
     session.clear
-    flash[:message] = "You have been logged out successfully!"
+    flash[:message] = 'You have been logged out successfully!'
     redirect '/'
   end
 end
