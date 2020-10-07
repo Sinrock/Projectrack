@@ -1,34 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create A New Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+    input[type=text], input[type=string], input[type=integer], input[type=date] {
+      width: 100%;
+      padding: 8px 6px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid black;
+      box-sizing: border-box;
+      }
+      button {
+      width: 100%;
+      padding: 10px 0;
+      margin: 10px auto;
+      border-radius: 60px; 
+      border: none;
+      background: black; 
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: green;
+      }
+    </style>
+    <body>
+
 <h1>Create A New Project!</h1>
 
 <form class="" action="/projects" method="post">
+    <p><strong><font size="4"><mark>Fields marked with an * are required</mark></font></strong></p>
+    
+    <div class="container">
+    <label for=""><strong>Title:</strong><font color="red" size="5">*</font></label>
+    <input type="text" name="title" value="" required>
 
-    <label for="">Title:</label>
-    <input type="text" name="title" value="">
+    <br><label for=""><strong>Description:</strong><font color="red" size="5">*</font></label>
+    <input type="text" name="description" value="" required>
 
-    <br><label for="">Description:</label>
-    <input type="text" name="description" value="">
-
-    <br><label for="">Est.Difficulty (1-10):</label>
+    <br><label for=""><strong>Estimated Difficulty (Scale: 1-10):</strong></label>
     <input type="integer" name="difficulty" value="">
 
-    <br><label for="">Est. Duration (in minutes):</label>
+    <br><label for=""><strong>Estimated Duration (in minutes):</strong></label>
     <input type="integer" name="duration" value="">
 
-    <br><label for="">Tools Needed:</label>
+    <br><label for=""><strong>Tools Needed:</strong></label>
     <input type="string" name="tools" value="">
 
-    <br><label for="">Parts Needed:</label>
+    <br><label for=""><strong>Parts Needed:</strong></label>
     <input type="string" name="parts" value="">
 
-    <br><label for="">Project Location:</label>
+    <br><label for=""><strong>Project Location:</strong></label>
     <input type="string" name="location" value="">
 
-    <br><label for="">Complete By Date:</label>
-    <input type="date" name="completion" value="">
+    <br><label for=""><strong>Must Complete By:</strong><font color="red" size="5">*</font></label>
+    <input type="date" name="completion" value="" required>
 
-    <br><label for="">Cost:</label>
-    <input type="integer" name="cost" value="">
+    <br><label for=""><strong>Cost:</strong></label>
+    <input type="integer" name="cost" value="$">
     <br>
     <br>
-    <input type="submit" name="" value="Create a New Project">
+    <button type="submit" value="Create">Create Your New Project</button>
 </form>
+</div>
+</body>
+</html>

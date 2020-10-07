@@ -24,6 +24,7 @@
       h3 {
       margin: 12px 0;
       color: black;
+      text-align: center;
       }
       .main-block {
       display: flex;
@@ -96,14 +97,15 @@
     <div class="main-block">
     <form class="" action="/users" method="post">
       <h1><strong>Create A Free Account</strong></h1>
+      <h3><mark>Please Complete All Fields</mark></h3>
       <fieldset>
         <legend>
-          <h3>Please enter your new account information below</h3>
+          
         </legend>
         <div  class="account-details">
-          <div><label><strong>Name*</strong></label><input type="text" name="name" required></div>
-          <div><label><strong>Email Address*</strong></label><input type="text" name="email" required></div>
-          <div><label><strong>Password*</strong></label><input type="password" name="password" required></div>
+          <div><label><strong>Name:<font color="red" size="5">*</font></strong></label><input type="text" name="name" required></div>
+          <div><label><strong>Email Address:<font color="red" size="5">*</font></strong></label><input type="text" name="email" required></div>
+          <div><label><strong>Password:<font color="red" size="5">*</font></strong></label><input type="password" name="password" required></div>
         </div>
       </fieldset>
       <button type="submit" value="Create">Submit</button>
