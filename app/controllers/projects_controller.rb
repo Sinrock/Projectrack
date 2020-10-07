@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
       user_id: current_user.id
     )
     if project.save
-      flash[:message] = 'New project created successfully!'
+      flash[:message] = 'Project has been created/edited successfully!'
       redirect "/projects/#{project.id}"
     else
       flash[:error] = "Project creation failed: #{project.errors.full_messages.to_sentence}"
@@ -77,6 +77,7 @@ class ProjectsController < ApplicationController
   delete '/projects/:id' do
     @project = Project.find(params[:id])
     @project.destroy
+    flash[:message] = 'Project deleted successfully!'
     redirect '/projects'
   end
 end

@@ -1,17 +1,19 @@
 <h1><%= @project.title %></h1>
+<hr style="border: 3px solid black;" />
 <p><strong>Description:</strong> <%= @project.description %></p>
-<p><strong>Difficulty Level:</strong> <%= @project.difficulty %></p>
-<p><strong>Estimated Duration:</strong> <%= @project.duration %></p>
-<p><strong>Tools Needed:</strong> <%= @project.tools %></p>
-<p><strong>Parts Needed:</strong> <%= @project.parts %></p>
-<p><strong>Location of Project:</strong> <%= @project.location %></p>
-<p><strong>Complete By Date:</strong> <%= @project.completion %></p>
-<p><strong>Estimated Cost:</strong> <%= @project.cost %></p>
-<p><strong>Created At:</strong> <%= @project.created_at %></p>
+<hr><p><strong>Complete By Date:</strong> <%= @project.completion %></p>
+<hr><p><strong>Difficulty Level:</strong> <%= @project.difficulty %></p>
+<hr><p><strong>Estimated Duration:</strong> <%= @project.duration %></p>
+<hr><p><strong>Tools Needed:</strong> <%= @project.tools %></p>
+<hr><p><strong>Parts Needed:</strong> <%= @project.parts %></p>
+<hr><p><strong>Location of Project:</strong> <%= @project.location %></p>
+<hr><p><strong>Estimated Cost:</strong> <%= @project.cost %></p>
+<hr><p><strong>Created At:</strong> <%= @project.created_at %></p>
+<hr>
 
 <% if can_edit(@project) %>
 
-<a href="/projects/<%= @project.id %>/edit">Edit This Project</a>
+<a href="/projects/<%= @project.id %>/edit"><strong>Edit This Project</strong></a>
 <p>
 <form class="" action="/projects/<%= @project.id %>" method="post">
     <input type="hidden" name="_method" value="delete">

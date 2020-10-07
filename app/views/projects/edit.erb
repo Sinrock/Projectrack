@@ -1,13 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create A New Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+    input[type=text], input[type=string], input[type=integer], input[type=date] {
+      width: 100%;
+      padding: 8px 6px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid black;
+      box-sizing: border-box;
+      }
+      button {
+      width: 100%;
+      padding: 10px 0;
+      margin: 10px auto;
+      border-radius: 60px; 
+      border: none;
+      background: black; 
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: green;
+      }
+    </style>
+    <body>
+
 <h1>Edit Project</h1>
-
-<form class="" action="/projects/<%= @project.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
-
-    <label for="title"><strong>Title: </strong></label>
-    <input type="string" name="title" value="<%= @project.title %>">
+<p><strong><font size="4"><mark>Fields marked with an * are required</mark></font></strong></p>
+<form class="" action='/projects' method="post">
+    <div class="container">
+    <label for="title"><strong>Title:<font color="red" size="5">*</font> </strong></label>
+    <input type="string" name="title" value="<%= @project.title %>" required>
 <br>
-    <label for="Description"><strong>Description: </strong></label>
-    <input type="text" name="description" value="<%= @project.duration %>">
+    <label for="Description"><strong>Description: <font color="red" size="5">*</font></strong></label>
+    <input type="text" name="description" value="<%= @project.duration %>" required>
+<br>
+    <label for="completion"><strong>Complete By:<font color="red" size="5">*</font> </strong></label>
+    <input type="date" name="completion" value="<%= @project.completion %>" required>
 <br>
     <label for="difficulty"><strong>Difficulty: </strong></label>
     <input type="integer" name="difficulty" value="<%= @project.difficulty %>">
@@ -24,11 +58,12 @@
     <label for="location"><strong>Location: </strong></label>
     <input type="string" name="location" value="<%= @project.location %>">
 <br>
-    <label for="completion"><strong>Complete By: </strong></label>
-    <input type="date" name="completion" value="<%= @project.completion %>">
 <br>
     <label for="cost"><strong>Est. Cost: </strong></label>
     <input type="integer" name="cost" value="<%= @project.cost %>">
 <br>
-    <input type="submit" name="" value="Save Changes">
+    <button type="submit" value="Save Changes">Save Changes</button>
 </form>
+</div>
+</body>
+</html>
