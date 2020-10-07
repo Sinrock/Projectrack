@@ -6,7 +6,7 @@ ProjecTrack is an application to create, edit, view and delete various projects 
 
 Download or clone this repo
 
-CD(change directory) into the ProjecTrack directory
+cd (change directory) into the ProjecTrack directory
 
 And then execute the following command:
 ```bash
