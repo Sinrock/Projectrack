@@ -43,13 +43,14 @@ class UsersController < ApplicationController
       flash[:message] = "Account Creation Successful!  Welcome, #{@user.name}"
       redirect "users/#{@user.id}"
     else
-      flash[:error] = "Are you sure you don't have an account? A user with that email address already exists!"
+      flash[:error] = "A user with that email address already exists, please log in!"
       redirect '/login'
     end
   end
 
   get '/logout' do
     session.clear
+    flash[:message] = "You have been logged out successfully!"
     redirect '/'
   end
 end

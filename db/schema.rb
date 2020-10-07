@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20_200_921_022_043) do
     t.string   'tools'
     t.string   'parts'
     t.string   'location'
-    t.date 'completion'
+    t.date     'completion'
     t.integer  'cost'
     t.datetime 'created_at',  null: false
     t.datetime 'updated_at',  null: false

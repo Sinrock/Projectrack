@@ -64,21 +64,24 @@ body {
     width: 85%;
     vertical-align: middle;
     horizontal-align: middle;
-    opacity:0.80;
+    opacity:0.85;
     border-radius:60px;
+  }
+   .container {
+    font-size: 16px;
   }
 </style>
 
 <div class="sidenav">
+  <% if logged_in%>
   <a href="/">Home</a>
-  <a href="/login">Log In</a>
-  <a href="/signup">Create An Account</a>
-  
-  <hr></hr>
-  <% if logged_in %>
   <a href="/projects">View Projects</a>
   <a href="/projects/new">Create A Project</a>
   <a href="/logout">Log Out</a>
+  <% else %>
+  <a href="/">Home</a>
+  <a href="/login">Log In</a>
+  <a href="/signup">Create An Account</a>
   <% end %>
   <img src="https://kaahur.com/wp-content/uploads/2020/10/pexels-photo-209235.jpeg" width="200" height="150" style="vertical-align:bottom">
 </div>

@@ -5,20 +5,20 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <style>
       html, body {
-      display: flex;
       justify-content: center;
       font-family: Roboto, Arial, sans-serif;
       font-size: 15px;
+      min-height: 100%;
       }
       form {
-      border: 5px solid #f1f1f1;
+      
       }
       input[type=text], input[type=password] {
       width: 100%;
       padding: 16px 8px;
       margin: 8px 0;
       display: inline-block;
-      border: 1px solid #ccc;
+      border: 1px solid black;
       box-sizing: border-box;
       }
       button {
@@ -29,13 +29,16 @@
       border: none;
       cursor: pointer;
       width: 100%;
+      border-radius:60px
       }
       h1 {
-      text-align:center;
-      fone-size:18;
+      margin: 0;
+      font-weight: 400;
+      text-align: center;
       }
       button:hover {
-      opacity: 0.8;
+      background: green;
+      color: black;
       }
       .formcontainer {
       text-align: left;
@@ -60,16 +63,16 @@
   </head>
   <body>
     <form class="" action="/login" method="post">
-      <h1>Please Log In</h1>
+      <h1><strong>Please Log In</strong></h1>
       <div class="formcontainer">
-      <hr/>
+      <hr>
       <div class="container">
         <label for="email"><strong>Email Address</strong></label>
-        <input type="text" placeholder="Enter Email Address" id="email" value="" name="email" required>
+        <input type="text" placeholder="Enter Email" id="email" value="" name="email" required>
         <label for="password"><strong>Password</strong></label>
         <input type="password" placeholder="Enter Password" id="password" value="" name="password" required>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit"><font size="3"><strong>Login</strong></font></button>
     </form>
   </body>
 </html>
