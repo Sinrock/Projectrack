@@ -6,8 +6,8 @@
     <style>
     input[type=text], input[type=string], input[type=integer], input[type=date] {
       width: 100%;
-      padding: 8px 6px;
-      margin: 8px 0;
+      padding: 6px 4px;
+      margin: 1px 0;
       display: inline-block;
       border: 1px solid black;
       box-sizing: border-box;
@@ -15,7 +15,7 @@
       button {
       width: 100%;
       padding: 10px 0;
-      margin: 10px auto;
+      margin: 4px auto;
       border-radius: 60px; 
       border: none;
       background: black; 
@@ -46,7 +46,7 @@
     <label for="difficulty"><strong>Difficulty: </strong></label>
     <input type="integer" name="difficulty" value="<%= @project.difficulty %>">
 <br>
-    <label for="duration"><strong>Est. Duration: </strong></label>
+    <label for="duration"><strong>Estimated Duration: </strong></label>
     <input type="integer" name="duration" value="<%= @project.duration %>">
 <br>
     <label for="tools"><strong>Tools Needed: </strong></label>
@@ -58,10 +58,8 @@
     <label for="location"><strong>Location: </strong></label>
     <input type="string" name="location" value="<%= @project.location %>">
 <br>
-<br>
-    <label for="cost"><strong>Est. Cost: </strong></label>
+    <label for="cost"><strong>Estimated Cost: </strong></label>
     <input type="integer" name="cost" value="<%= @project.cost %>">
-<br>
     <button type="submit" value="Save Changes">Save Changes</button>
 </form>
 </div>
