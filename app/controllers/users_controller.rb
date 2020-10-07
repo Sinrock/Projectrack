@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       flash[:message] = "Welcome back #{user.name}!"
       redirect "/users/#{user.id}"
     else
-      flash[:error] = 'Your credentials were invalid.  Please try again!'
+      flash[:error] = 'Your credentials were invalid or no account exists with that email.  Please try again!'
       redirect '/login'
     end
   end
@@ -52,6 +52,13 @@ class UsersController < ApplicationController
   get '/logout' do
     session.clear
     flash[:message] = 'You have been logged out successfully!'
+    redirect '/'
+  end
+
+  delete '/users/:id' do
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:message] = 'Account deleted successfully!'
     redirect '/'
   end
 end
