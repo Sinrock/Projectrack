@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   get '/login' do
     if logged_in
       flash[:message] = "You're already logged in silly goose!"
-      redirect 'users/show'
+      redirect '/'
     else
       erb :'users/login'
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     if (@user = User.find_by(id: params[:id]))
       erb :'/users/show'
     else
-      flash[:error] = "You can't see that page right now!"
+      flash[:error] = "You can't see that page right now silly goose!"
       redirect :'/'
     end
   end
