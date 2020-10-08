@@ -24,8 +24,12 @@ class UsersController < ApplicationController
   end
 
   get '/users/:id' do
-    @user = User.find_by(id: params[:id])
-    erb :'/users/show'
+    if (@user = User.find_by(id: params[:id]))
+      erb :'/users/show'
+    else
+      flash[:error] = "You can't see that page right now!"
+      redirect :'/'
+    end
   end
 
   get '/signup' do
