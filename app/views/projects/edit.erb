@@ -30,9 +30,14 @@
     </style>
     <body>
 
-<h1><font color="darkblue">Edit Project</font></h1>
-<p><strong><font size="4"><mark>Fields marked with an * are required</mark></font></strong></p>
-<form class="" action='/projects' method="post">
+<h1 class="animate__animated animate__bounceInDown" align="center">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <font color="darkblue">Edit Project</font></h1>
+<h3 class="animate__animated animate__rubberBand" align="center">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <mark>Fields marked with an * are required</mark></h3>
+<form class="" action="/projects/<%= @project.id %>" method="post" >
+<input id="hidden" type="hidden" name="_method" value="PATCH">
     <div class="container">
     <label for="title"><strong>Title:<font color="red" size="5">*</font> </strong></label>
     <input type="string" name="title" value="<%= @project.title %>" required>

@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
   end
 
   get '/projects/:id' do
-    @project = Project.find(params[:id])
+    @project = Project.find_by(id: params[:id])
     erb :'/projects/show'
   end
 
@@ -60,6 +60,7 @@ class ProjectsController < ApplicationController
 
   patch '/projects/:id' do
     @project = Project.find(params[:id])
+    if can_edit(@project)
     @project.update(
       title: params[:title],
       description: params[:description],
@@ -72,12 +73,21 @@ class ProjectsController < ApplicationController
       cost: params[:cost]
     )
     redirect "/projects/#{@project.id}"
+    else
+      flash[:error] = "You are not authorized to view that content.  Sneaky, Sneaky!"
+      redirect "/projects"
+    end
   end
 
   delete '/projects/:id' do
     @project = Project.find(params[:id])
-    flash[:message] = "#{@project.title} has been deleted successfully!"
-    @project.destroy
-    redirect '/projects'
+    if can_edit(@project)
+      flash[:message] = "#{@project.title} has been deleted successfully!"
+      @project.destroy
+      redirect '/projects'
+    else
+      flash[:error] = "You are not authorized to delete that project!  Sneaky, Sneaky!"
+      redirect '/projects'
+    end
   end
 end

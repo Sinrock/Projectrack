@@ -60,9 +60,14 @@ class UsersController < ApplicationController
   end
 
   delete '/users/:id' do
-    @user = User.find(params[:id])
-    @user.destroy
-    flash[:message] = 'Account deleted successfully!'
-    redirect '/'
+    user = User.find(params[:id])
+    if user == current_user
+      user.destroy
+      flash[:message] = 'Account deleted successfully!'
+      redirect '/'
+    else
+      flash[:error] = 'You are not authorized to delete that account!  Sneaky, Sneaky!'
+      redirect '/'
+    end
   end
 end
