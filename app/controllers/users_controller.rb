@@ -67,7 +67,7 @@ class UsersController < ApplicationController
       redirect '/'
     else
       flash[:error] = 'You are not authorized to delete that account!  Sneaky, Sneaky!'
-      redirect '/'
+      redirect 'users/show'
     end
   end
 end

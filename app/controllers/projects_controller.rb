@@ -61,21 +61,21 @@ class ProjectsController < ApplicationController
   patch '/projects/:id' do
     @project = Project.find(params[:id])
     if can_edit(@project)
-    @project.update(
-      title: params[:title],
-      description: params[:description],
-      difficulty: params[:difficulty],
-      duration: params[:duration],
-      tools: params[:tools],
-      parts: params[:parts],
-      location: params[:location],
-      completion: params[:completion],
-      cost: params[:cost]
-    )
-    redirect "/projects/#{@project.id}"
+      @project.update(
+        title: params[:title],
+        description: params[:description],
+        difficulty: params[:difficulty],
+        duration: params[:duration],
+        tools: params[:tools],
+        parts: params[:parts],
+        location: params[:location],
+        completion: params[:completion],
+        cost: params[:cost]
+      )
+      redirect "/projects/#{@project.id}"
     else
-      flash[:error] = "You are not authorized to view that content.  Sneaky, Sneaky!"
-      redirect "/projects"
+      flash[:error] = 'You are not authorized to view that content.  Sneaky, Sneaky!'
+      redirect '/projects'
     end
   end
 
@@ -86,8 +86,8 @@ class ProjectsController < ApplicationController
       @project.destroy
       redirect '/projects'
     else
-      flash[:error] = "You are not authorized to delete that project!  Sneaky, Sneaky!"
-      redirect '/projects'
+      flash[:error] = 'You are not authorized to delete that project!  Sneaky, Sneaky!'
+      redirect "/projects/#{@project.id}"
     end
   end
 end
