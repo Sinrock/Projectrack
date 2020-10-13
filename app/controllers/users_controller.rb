@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   get '/users/:id' do
-    if (@user = User.find_by(id: params[:id]))
+    if (@user = User.find_by(id: params[:id]) && current_user)
       erb :'/users/show'
     else
       flash[:error] = 'You need to log in first goofball!'
