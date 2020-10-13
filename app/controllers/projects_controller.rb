@@ -3,12 +3,9 @@
 # Projects
 class ProjectsController < ApplicationController
   get '/projects' do
-    if logged_in
+    unless redirect_if_logged_in
       @projects = current_user.projects
       erb :'projects/index'
-    else
-      flash[:error] = 'You must be signed in to view your projects!'
-      redirect '/login'
     end
   end
 

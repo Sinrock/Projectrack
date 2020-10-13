@@ -27,8 +27,8 @@ class UsersController < ApplicationController
     if (@user = User.find_by(id: params[:id]))
       erb :'/users/show'
     else
-      flash[:error] = "You can't see that page right now silly goose!"
-      redirect :'/'
+      flash[:error] = 'You need to log in first goofball!'
+      redirect :'/login'
     end
   end
 

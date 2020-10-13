@@ -2,6 +2,7 @@
 
 require './config/environment'
 
+# application
 class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
@@ -30,6 +31,13 @@ class ApplicationController < Sinatra::Base
 
     def can_edit(project)
       project.user == current_user
+    end
+
+    def redirect_if_logged_in
+      return if logged_in
+
+      flash[:error] = 'You must be signed in to do that!'
+      redirect '/users/login'
     end
   end
 end
