@@ -25,9 +25,10 @@ class UsersController < ApplicationController
 
   get '/users/:id' do
     if (@user = User.find_by(id: params[:id]) && current_user)
+      flash[:error] = 'You can only view your own account silly goose!'
       erb :'/users/show'
     else
-      flash[:error] = 'You need to log in first goofball!'
+      flash[:error] = 'You need to log in first silly goose!'
       redirect :'/login'
     end
   end
