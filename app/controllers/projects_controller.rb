@@ -42,7 +42,12 @@ class ProjectsController < ApplicationController
 
   get '/projects/:id' do
     @project = Project.find_by(id: params[:id])
-    erb :'/projects/show'
+    if can_edit(@project)
+      erb :'/projects/show'
+    else
+      flash[:error] = 'Sorry, you are not authorized to view this project!'
+      redirect '/'
+    end
   end
 
   get '/projects/:id/edit' do
@@ -50,7 +55,7 @@ class ProjectsController < ApplicationController
     if can_edit(@project)
       erb :'/projects/edit'
     else
-      flash[:error] = 'Sorry, you are not authorized to edit this post!'
+      flash[:error] = 'Sorry, you are not authorized to edit this project!'
       redirect '/projects'
     end
   end
